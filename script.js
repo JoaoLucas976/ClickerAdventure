@@ -40,9 +40,7 @@ function initialize(){
 	var teste = localStorage.getItem("total_clicks");
 	if (isNaN(teste)) {
 		Reset();
-	} else {
-		alert("Não foi");
-	}
+	} 
 	// Recuperando a quantidade de clicks e multiplier
 	document.getElementById('total_clicks').innerHTML = parseInt(localStorage.getItem("total_clicks"));
 	clicks = parseInt(localStorage.getItem("total_clicks"));
