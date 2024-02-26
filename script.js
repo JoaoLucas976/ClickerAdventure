@@ -37,15 +37,18 @@ var aut9t = 0, aut9v = 1000000000;
 var aut10t = 0, aut10v = 10000000000;
 
 function initialize(){
-	// Recuperando a quantidade de clicks e multiplier
-	document.getElementById('total_clicks').innerHTML = parseInt(localStorage.getItem("total_clicks"));
-	clicks = parseInt(localStorage.getItem("total_clicks"));
-	document.getElementById('cps').innerHTML = parseInt(localStorage.getItem("cps"));
-	cps = parseInt(localStorage.getItem("cps"));
-	document.getElementById('multiplier').innerHTML = parseInt(localStorage.getItem("multiplier"));
-	multiplier = parseInt(localStorage.getItem("multiplier"));
+    if (parseInt(localStorage.getItem("total_clicks")) == Nan){
+        Reset();
+    } 
+    // Recuperando a quantidade de clicks e multiplier
+    document.getElementById('total_clicks').innerHTML = parseInt(localStorage.getItem("total_clicks"));
+    clicks = parseInt(localStorage.getItem("total_clicks"));
+    document.getElementById('cps').innerHTML = parseInt(localStorage.getItem("cps"));
+    cps = parseInt(localStorage.getItem("cps"));	
+    document.getElementById('multiplier').innerHTML = parseInt(localStorage.getItem("multiplier"));
+    multiplier = parseInt(localStorage.getItem("multiplier"));
 
-	// Recuperando as quantidades de cada ugprade
+    // Recuperando as quantidades de cada ugprade
     document.getElementById('up1t').innerHTML = parseInt(localStorage.getItem('up1t'));
     up1t = parseInt(localStorage.getItem('up1t'));
     document.getElementById('up2t').innerHTML = parseInt(localStorage.getItem('up2t'));
