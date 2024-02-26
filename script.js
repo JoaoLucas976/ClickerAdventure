@@ -36,11 +36,15 @@ var aut8t = 0, aut8v = 100000000;
 var aut9t = 0, aut9v = 1000000000;
 var aut10t = 0, aut10v = 10000000000;
 
-function initialize(){
+function testar_valores(){
 	var teste = localStorage.getItem("total_clicks");
 	if (isNaN(teste)) {
 		Reset();
 	} 
+	initialize();	
+}
+
+function initialize(){
 	// Recuperando a quantidade de clicks e multiplier
 	document.getElementById('total_clicks').innerHTML = parseInt(localStorage.getItem("total_clicks"));
 	clicks = parseInt(localStorage.getItem("total_clicks"));
