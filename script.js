@@ -37,9 +37,9 @@ var aut9t = 0, aut9v = 1000000000;
 var aut10t = 0, aut10v = 10000000000;
 
 function initialize(){
-    if (parseInt(localStorage.getItem("total_clicks")) == Nan){
-        Reset();
-    } 
+	teste = localStorage.getItem("total_clicks");
+	alert(teste);
+
     // Recuperando a quantidade de clicks e multiplier
     document.getElementById('total_clicks').innerHTML = parseInt(localStorage.getItem("total_clicks"));
     clicks = parseInt(localStorage.getItem("total_clicks"));
