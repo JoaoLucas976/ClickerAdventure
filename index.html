@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Clicker Adventure</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="content/upg1.png">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onload="initialize()">
+
+<div id="upgrades" class="upgrades">
+	<button id="buybt1" onclick="buy_up(1)">
+		Click Power (+1): <span id="up1t">0</span><br>
+		Preço: <span id="up1v"></span>
+	</button><br>
+
+	<button id="buybt2" onclick="buy_up(2)">
+		Click Power (+5): <span id="up2t">0</span><br>
+		Preço: <span id="up2v"></span>
+	</button><br>
+
+	<button id="buybt3" onclick="buy_up(3)">
+		Click Power (+20): <span id="up3t">0</span><br>
+		Preço: <span id="up3v"></span>
+	</button><br>
+
+	<button id="buybt4" onclick="buy_up(4)">
+		Click Power (+100): <span id="up4t">0</span><br>
+		Preço: <span id="up4v"></span>				
+	</button><br>
+
+	<button id="buybt5" onclick="buy_up(5)">
+		Upgrade 5: <span id="up5t">0</span><br>
+		Preço: <span id="up5v"></span>				
+	</button><br>
+
+	<button id="buybt6" onclick="buy_up(6)">
+		Upgrade 6: <span id="up6t">0</span><br>
+		Preço: <span id="up6v"></span>
+	</button><br>
+
+	<button id="buybt7" onclick="buy_up(7)">
+		Upgrade 7: <span id="up7t">0</span><br>
+		Preço: <span id="up7v"></span>				
+	</button><br>
+
+	<button id="buybt8" onclick="buy_up(8)">
+		Upgrade 8: <span id="up8t">0</span><br>
+		Preço: <span id="up8v"></span>
+	</button><br>
+
+	<button id="buybt9" onclick="buy_up(9)">
+		Upgrade 9: <span id="up9t">0</span><br>
+		Preço: <span id="up9v"></span>
+	</button><br>
+
+	<button id="buybt10" onclick="buy_up(10)">
+		Upgrade 10: <span id="up10t">0</span><br>
+		Preço: <span id="up10v"></span>
+	</button>
+</div>
+
+<div id="main" class="main">
+
+	<div class="menu">
+		<button id="options_btn" onclick="ShowOptions(1)"> Options </button>
+		<button id="shop_btn" onclick="ShowShop(1)"> Shop </button>
+		<button id="credits_btn" onclick="ShowCredits(1)"> Credits </button>
+		<button id="achievments_btn" onclick="ShowAchievements(1)"> Achievements </button>
+	</div>
+	
+	<div id="main_display" class="main_display">
+		<div class="logo">
+			<p> CLICKER ADVENTURE </p>
+		</div>
+
+		Total de clicks: <span id="total_clicks"> 0 </span> <br><br>	
+		Clicks por segundo: <span id="cps"> 0 </span> <br><br>
+		Click Power: <span id="multiplier"> 1 </span> <br><br>
+		<center><button id="clicker" onclick="clicker()"> Clica </button></center>
+	</div>
+
+	<div id="options" class="options">
+		<div class="controls">
+			<button onclick="ShowOptions(0)" class="close_btn"> X </button>
+		</div>
+
+		<p> Options </p>
+
+		<button onclick="Save()"> Save </button>
+		<button onclick="Reset()"> Reset </button>
+
+	</div>
+
+	<div id="shop" class="shop">
+		<div class="controls">
+			<button onclick="ShowShop(0)" class="close_btn"> X </button>
+		</div>
+
+		<p> Shop </p>
+
+	</div>
+
+	<div id="credits" class="credits">
+		<div class="controls">
+			<button onclick="ShowCredits(0)" class="close_btn"> X </button>
+		</div>
+
+		<p> Credits </p>
+
+	</div>	
+
+	<div id="achievements" class="achievements">
+		<div class="controls">
+			<button onclick="ShowAchievements(0)" class="close_btn"> X </button>
+		</div>
+
+		<table id="achievements_table">
+			<td>1</td>
+			<td>2</td>
+			<td>3</td> 
+			<tr> 
+			<td>4</td>
+			<td>5</td>
+			<td>6</td> 
+			<tr> 
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</table>
+
+	</div>
+
+</div>
+
+<div class="autoclickers">
+
+	<button id="buyaut1" onclick="buy_aut(1)">
+		Clicker de Papel: <span id="aut1t">0</span><br>
+		Preço: <span id="aut1v"></span>
+	</button> <br>
+
+	<button id="buyaut2" onclick="buy_aut(2)">
+		Clicker de Madeira: <span id="aut2t">0</span><br>
+		Preço: <span id="aut2v"></span>
+	</button> <br>
+
+	<button id="buyaut3" onclick="buy_aut(3)">
+		Clicker de Ferro: <span id="aut3t">0</span><br>
+		Preço: <span id="aut3v"></span>
+	</button>
+
+	<button id="buyaut4" onclick="buy_aut(4)">
+		Clicker de Cobre: <span id="aut4t">0</span><br>
+		Preço: <span id="aut4v"></span>
+	</button>
+
+	<button id="buyaut5" onclick="buy_aut(5)">
+		Clicker de Prata: <span id="aut5t">0</span><br>
+		Preço: <span id="aut5v"></span>
+	</button> <br>
+
+	<button id="buyaut6" onclick="buy_aut(6)">
+		Clicker de Ouro: <span id="aut6t">0</span><br>
+		Preço: <span id="aut6v"></span>
+	</button> <br>
+
+	<button id="buyaut7" onclick="buy_aut(7)">
+		Clicker de Diamante: <span id="aut7t">0</span><br>
+		Preço: <span id="aut7v"></span>
+	</button>
+
+	<button id="buyaut8" onclick="buy_aut(8)">
+		Clicker Místico: <span id="aut8t">0</span><br>
+		Preço: <span id="aut8v"></span>
+	</button> <br>
+
+	<button id="buyaut9" onclick="buy_aut(9)">
+		Clicker Cósmico: <span id="aut9t">0</span><br>
+		Preço: <span id="aut9v"></span>
+	</button> <br>
+
+	<button id="buyaut10" onclick="buy_aut(10)">
+		Clicker Divino: <span id="aut10t">0</span><br>
+		Preço: <span id="aut10v"></span>
+	</button>
+</div>
+</body>
+</html>
