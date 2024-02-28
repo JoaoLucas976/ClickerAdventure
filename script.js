@@ -13,32 +13,46 @@
 var multiplier = 1;
 var clicks = 0;
 var cps = 0;
-// Upgrades
-var up1t = 0, up1v = 10;
-var up2t = 0, up2v = 100;
-var up3t = 0, up3v = 10000;
-var up4t = 0, up4v = 100000;
-var up5t = 0, up5v = 1000000;
-var up6t = 0, up6v = 10000000;
-var up7t = 0, up7v = 100000000;
-var up8t = 0, up8v = 1000000000;
-var up9t = 0, up9v = 10000000000;
-var up10t = 0, up10v = 100000000000;
+
+function formatarNumero(numero) {
+    if (numero >= 1e9){
+		return (numero / 1e9).toFixed(3) + 'B';
+	} else if (numero >= 1e6) {
+        return (numero / 1e6).toFixed(3) + 'M';
+    } else if (numero >= 1e3) {
+        return (numero / 1e3).toFixed(3) + 'K';
+    } else {
+        return numero.toString();
+    }
+}
+
 // Autoclickers
-var aut1t = 0, aut1v = 10;
-var aut2t = 0, aut2v = 100;
-var aut3t = 0, aut3v = 1000;
-var aut4t = 0, aut4v = 10000;
-var aut5t = 0, aut5v = 100000;
-var aut6t = 0, aut6v = 1000000;
-var aut7t = 0, aut7v = 10000000;
-var aut8t = 0, aut8v = 100000000;
-var aut9t = 0, aut9v = 1000000000;
-var aut10t = 0, aut10v = 10000000000;
+var aut1t = 0,  aut1v  = 15;
+var aut2t = 0,  aut2v  = 100;
+var aut3t = 0,  aut3v  = 1100;
+var aut4t = 0,  aut4v  = 12000;
+var aut5t = 0,  aut5v  = 130000;
+var aut6t = 0,  aut6v  = 1400000;
+var aut7t = 0,  aut7v  = 20000000;
+var aut8t = 0,  aut8v  = 330000000;
+var aut9t = 0,  aut9v  = 5100000000;
+var aut10t = 0, aut10v = 75000000000;
+
+// Upgrades
+var up1t = 0;  up1v  = 20;
+var up2t = 0;  up2v  = 300;
+var up3t = 0;  up3v  = 4500;
+var up4t = 0;  up4v  = 67500;
+var up5t = 0;  up5v  = 1000000;
+var up6t = 0;  up6v  = 12000000;
+var up7t = 0;  up7v  = 250000000;
+var up8t = 0;  up8v  = 3000000000;
+var up9t = 0;  up9v  = 36000000000;	
+var up10t = 0; up10v = 180000000000;
 
 function testar_valores(){
 	var teste = localStorage.getItem("total_clicks");
-	if (isNaN(teste)) {
+	if (isNaN(teste) || (teste == null)) {
 		Reset();
 	} 
 	initialize();	
@@ -154,17 +168,19 @@ function update(){
 	document.getElementById('up8t').innerHTML = up8t;
 	document.getElementById('up9t').innerHTML = up9t;
 	document.getElementById('up10t').innerHTML = up10t;
+
 // Definindo os valores de cada upgrade
-	document.getElementById('up1v').innerHTML = up1v;
-	document.getElementById('up2v').innerHTML = up2v;
-	document.getElementById('up3v').innerHTML = up3v;
-	document.getElementById('up4v').innerHTML = up4v;
-	document.getElementById('up5v').innerHTML = up5v;
-	document.getElementById('up6v').innerHTML = up6v;
-	document.getElementById('up7v').innerHTML = up7v;
-	document.getElementById('up8v').innerHTML = up8v;
-	document.getElementById('up9v').innerHTML = up9v;
-	document.getElementById('up10v').innerHTML = up10v;
+	document.getElementById('up1v').innerHTML = formatarNumero(up1v);
+	document.getElementById('up2v').innerHTML = formatarNumero(up2v);
+	document.getElementById('up3v').innerHTML = formatarNumero(up3v);
+	document.getElementById('up4v').innerHTML = formatarNumero(up4v);
+	document.getElementById('up5v').innerHTML = formatarNumero(up5v);
+	document.getElementById('up6v').innerHTML = formatarNumero(up6v);
+	document.getElementById('up7v').innerHTML = formatarNumero(up7v);
+	document.getElementById('up8v').innerHTML = formatarNumero(up8v);
+	document.getElementById('up9v').innerHTML = formatarNumero(up9v);
+	document.getElementById('up10v').innerHTML = formatarNumero(up10v);
+
 // Definindo as quantidades de cada autoclicker
 	document.getElementById('aut1t').innerHTML = aut1t;
 	document.getElementById('aut2t').innerHTML = aut2t;
@@ -177,22 +193,22 @@ function update(){
 	document.getElementById('aut9t').innerHTML = aut9t;
 	document.getElementById('aut10t').innerHTML = aut10t;	
 // Definindo os valores de cada autoclicker
-	document.getElementById('aut1v').innerHTML = aut1v;
-	document.getElementById('aut2v').innerHTML = aut2v;
-	document.getElementById('aut3v').innerHTML = aut3v;
-	document.getElementById('aut4v').innerHTML = aut4v;
-	document.getElementById('aut5v').innerHTML = aut5v;
-	document.getElementById('aut6v').innerHTML = aut6v;
-	document.getElementById('aut7v').innerHTML = aut7v;
-	document.getElementById('aut8v').innerHTML = aut8v;
-	document.getElementById('aut9v').innerHTML = aut9v;
-	document.getElementById('aut10v').innerHTML = aut10v;
+	document.getElementById('aut1v').innerHTML = formatarNumero(aut1v);
+	document.getElementById('aut2v').innerHTML = formatarNumero(aut2v);
+	document.getElementById('aut3v').innerHTML = formatarNumero(aut3v);
+	document.getElementById('aut4v').innerHTML = formatarNumero(aut4v);
+	document.getElementById('aut5v').innerHTML = formatarNumero(aut5v);
+	document.getElementById('aut6v').innerHTML = formatarNumero(aut6v);
+	document.getElementById('aut7v').innerHTML = formatarNumero(aut7v);
+	document.getElementById('aut8v').innerHTML = formatarNumero(aut8v);
+	document.getElementById('aut9v').innerHTML = formatarNumero(aut9v);
+	document.getElementById('aut10v').innerHTML = formatarNumero(aut10v);
 
 // Atualizando o numero de cliks, clicks por segundo e o multiplicador
-	document.getElementById('total_clicks').innerHTML = clicks;
-	document.getElementById('cps').innerHTML = cps;
-	document.getElementById('multiplier').innerHTML = multiplier;
-	multiplier = (up1t * 1 + up2t * 5 + up3t * 20 + up4t * 100 + up5t * 500 + up6t * 2500 + up7t * 10000 + up8t * 50000 + up9t * 300000 + up10t * 1000000) + 1;
+	document.getElementById('total_clicks').innerHTML = formatarNumero(clicks);
+	document.getElementById('cps').innerHTML = formatarNumero(cps);
+	document.getElementById('multiplier').innerHTML = formatarNumero(multiplier);    // Poder de Click
+	multiplier = (up1t * 1 + up2t * 6 + up3t * 45 + up4t * 250 + up5t * 1200 + up6t * 7000 + up7t * 40000 + up8t * 250000 + up9t * 1500000 + up10t * 9000000) + 1;
 }
 
 function clicker(){
@@ -205,7 +221,7 @@ function buy_aut(a){
 		if (clicks >= aut1v){
 			aut1t = aut1t + 1;
 			clicks = clicks - aut1v;
-			aut1v = 1.4 * aut1v;
+			aut1v = 1.15 * aut1v;
 			aut1v = Math.round(aut1v);
 			cps = cps + 1;
 		} 
@@ -213,73 +229,73 @@ function buy_aut(a){
 		if (clicks >= aut2v){
 			aut2t = aut2t + 1;
 			clicks = clicks - aut2v;
-			aut2v = 1.4 * aut2v;
+			aut2v = 1.15 * aut2v;
 			aut2v = Math.round(aut2v);
-			cps = cps + 3;
+			cps = cps + 8;
 		}
 	} else if (a == 3){
 		if (clicks >= aut3v){
 			aut3t = aut3t + 1;
 			clicks = clicks - aut3v;
-			aut3v = 1.4 * aut3v;
+			aut3v = 1.15 * aut3v;
 			aut3v = Math.round(aut3v);
-			cps = cps + 10;
+			cps = cps + 47;
 		}
 	} else if (a == 4){
 		if (clicks >= aut4v){
 			aut4t = aut4t + 1;
 			clicks = clicks - aut4v;
-			aut4v = 1.4 * aut4v;
+			aut4v = 1.15 * aut4v;
 			aut4v = Math.round(aut4v);
-			cps = cps + 30;
+			cps = cps + 260;
 		}
 	} else if (a == 5){
 		if (clicks >= aut5v){
 			aut5t = aut5t + 1;
 			clicks = clicks - aut5v;
-			aut5v = 1.4 * aut5v;
+			aut5v = 1.15 * aut5v;
 			aut5v = Math.round(aut5v);
-			cps = cps + 80;
+			cps = cps + 1400;
 		}
 	} else if (a == 6){
 		if (clicks >= aut6v){
 			aut6t = aut6t + 1;
 			clicks = clicks - aut6v;
-			aut6v = 1.4 * aut6v;
+			aut6v = 1.15 * aut6v;
 			aut6v = Math.round(aut6v);
-			cps = cps + 250;
+			cps = cps + 7800;
 		}
 	} else if (a == 7){
 		if (clicks >= aut7v){
 			aut7t = aut7t + 1;
 			clicks = clicks - aut7v;
-			aut7v = 1.4 * aut7v;
+			aut7v = 1.15 * aut7v;
 			aut7v = Math.round(aut7v);
-			cps = cps + 800;
+			cps = cps + 44000;
 		}
 	} else if (a == 8){
 		if (clicks >= aut8v){
 			aut8t = aut8t + 1;
 			clicks = clicks - aut8v;
-			aut8v = 1.4 * aut8v;
+			aut8v = 1.15 * aut8v;
 			aut8v = Math.round(aut8v);
-			cps = cps + 2500;
+			cps = cps + 260000;
 		}
 	} else if (a == 9){
 		if (clicks >= aut9v){
 			aut9t = aut9t + 1;
 			clicks = clicks - aut9v;
-			aut9v = 1.4 * aut9v;
+			aut9v = 1.15 * aut9v;
 			aut9v = Math.round(aut9v);
-			cps = cps + 8000;
+			cps = cps + 1600000;
 		}
 	} else if (a == 10){
 		if (clicks >= aut10v) {
 			aut10t = aut10t + 1;
 			clicks = clicks - aut10v;
-			aut10v = 1.4 * aut10v;
+			aut10v = 1.15 * aut10v;
 			aut10v = Math.round(aut10v);
-			cps = cps + 24000;			
+			cps = cps + 10000000;			
 		}
 	}
 	update();
@@ -290,70 +306,70 @@ function buy_up(b){
 		if (clicks >= up1v){
 			up1t = up1t + 1;
 			clicks = clicks - up1v;
-			up1v = 1.4 * up1v;
+			up1v = 1.15 * up1v;
 			up1v = Math.round(up1v);
 		}
 	} else if (b == 2){
 		if (clicks >= up2v){
 			up2t = up2t + 1;
 			clicks = clicks - up2v;
-			up2v = 1.4 * up2v;
+			up2v = 1.15 * up2v;
 			up2v = Math.round(up2v);
 		}
 	} else if (b == 3){
 		if (clicks >= up3v){
 			up3t = up3t + 1;
 			clicks = clicks - up3v;
-			up3v = 1.4 * up3v;
+			up3v = 1.15 * up3v;
 			up3v = Math.round(up3v);
 		}
 	} else if (b == 4){
 		if (clicks >= up4v){
 			up4t = up4t + 1;
 			clicks = clicks - up4v;
-			up4v = 1.4 * up4v;
+			up4v = 1.15 * up4v;
 			up4v = Math.round(up4v);
 		}
 	} else if (b == 5){
 		if (clicks >= up5v){
 			up5t = up5t + 1;
 			clicks = clicks - up5v;
-			up5v = 1.4 * up5v;
+			up5v = 1.15 * up5v;
 			up5v = Math.round(up5v);
 		}
 	} else if (b == 6){
 		if (clicks >= up6v){
 			up6t = up6t + 1;
 			clicks = clicks - up6v;
-			up6v = 1.4 * up6v;
+			up6v = 1.15 * up6v;
 			up6v = Math.round(up6v);
 		}
 	} else if (b == 7){
 		if (clicks >= up7v){
 			up7t = up7t + 1;
 			clicks = clicks - up7v;
-			up7v = 1.4 * up7v;
+			up7v = 1.15 * up7v;
 			up7v = Math.round(up7v);
 		}
 	} else if (b == 8){
 		if (clicks >= up8v){
 			up8t = up8t + 1;
 			clicks = clicks - up8v;
-			up8v = 1.4 * up8v;
+			up8v = 1.15 * up8v;
 			up8v = Math.round(up8v);
 		}
 	} else if (b == 9){
 		if (clicks >= up9v){
 			up9t = up9t + 1;
 			clicks = clicks - up9v;
-			up9v = 1.4 * up9v;
+			up9v = 1.15 * up9v;
 			up9v = Math.round(up9v);
 		}
 	} else if (b == 10){
 		if (clicks >= up10v){
 			up10t = up10t + 1;
 			clicks = clicks - up10v;
-			up10v = 1.4 * up10v;
+			up10v = 1.15 * up10v;
 			up10v = Math.round(up10v);
 		}
 	}
@@ -423,26 +439,29 @@ function Reset(){
 	multiplier = 1;
 	clicks = 0;
 	cps = 0;
-	up1t = 0; up1v = 100;
-	up2t = 0; up2v = 500;
-	up3t = 0; up3v = 2500;
-	up4t = 0; up4v = 12500;
-	up5t = 0; up5v = 62500;
-	up6t = 0; up6v = 312500;
-	up7t = 0; up7v = 1562500;
-	up8t = 0; up8v = 7812500;
-	up9t = 0; up9v = 39062500;	
-	up10t = 0; up10v = 195312500;
-	aut1t = 0; aut1v = 100;
-	aut2t = 0; aut2v = 300;
-	aut3t = 0; aut3v = 900;
-	aut4t = 0; aut4v = 1800;
-	aut5t = 0; aut5v = 5400;
-	aut6t = 0; aut6v = 16200;
-	aut7t = 0; aut7v = 48600;
-	aut8t = 0; aut8v = 145800;
-	aut9t = 0; aut9v = 437400;
-	aut10t = 0; aut10v = 1312200;
+
+	up1t = 0;  up1v  = 20;
+	up2t = 0;  up2v  = 300;
+	up3t = 0;  up3v  = 4500;
+	up4t = 0;  up4v  = 67500;
+	up5t = 0;  up5v  = 1000000;
+	up6t = 0;  up6v  = 12000000;
+	up7t = 0;  up7v  = 250000000;
+	up8t = 0;  up8v  = 3000000000;
+	up9t = 0;  up9v  = 36000000000;	
+	up10t = 0; up10v = 180000000000;
+
+	aut1t = 0,  aut1v  = 15;
+	aut2t = 0,  aut2v  = 100;
+	aut3t = 0,  aut3v  = 1100;
+	aut4t = 0,  aut4v  = 12000;
+	aut5t = 0,  aut5v  = 130000;
+	aut6t = 0,  aut6v  = 1400000;
+	aut7t = 0,  aut7v  = 20000000;
+	aut8t = 0,  aut8v  = 330000000;
+	aut9t = 0,  aut9v  = 5100000000;
+	aut10t = 0, aut10v = 75000000000;
+
 	Save();
 }
 

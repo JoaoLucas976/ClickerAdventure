@@ -1,161 +1,176 @@
-body{
-	background-color: black;
+body {
+    background-color: #1e1e1e; /* Cinza escuro */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    color: #ffffff; /* Branco */
 }
 
-.upgrades{
-	background-color: yellow; 
-	width: 20%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
+.upgrades {
+    background-color: #333333; /* Cinza mais escuro */
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.main{
-	background-color: blue;
-	width: 60%;
-	height: 100%;
-	top: 0;
-	left: 20%;
-	text-align: center;
-	position: fixed;
+.main {
+    background-color: #222222; /* Cinza */
+    color: #ffffff; /* Branco */
+    width: 60%;
+    height: 100%;
+    top: 0;
+    left: 20%;
+    text-align: center;
+    position: fixed;
 }
 
-.autoclickers{
-	background-color: red; 
-	height: 100%;	
-	width: 20%;
-	position: fixed;
-	top: 0;
-	right: 0;
+.autoclickers {
+    background-color: #333333; /* Cinza mais escuro */
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .main button{
-	width: 120px;
-	height: 10%;
+    width: 120px;
+    height: 10%;
 }
 
 button{
-	width: 100%;
-	height: 10%;
-	font-size: 1em;
+    width: 100%;
+    height: 10%;
+    font-size: 1em;
 }
 
-button:hover{
-	background-color: black;
-	color: white;
+button:hover {
+    background-color: #777777; /* Cinza mais claro */
 }
 
 .logo {
-	font-size: 2em;
-	font-family: Times;
+    font-size: 2.5em;
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    color: #ffffff; /* Branco */
 }
 
 .menu {
-	top: 0;
-	background-color: purple; 
-	width: 100%;
-	height: 5%;
+    top: 0;
+    background-color: #333333; /* Cinza mais escuro */
+    width: 100%;
+    height: 5%;
 }
 
-.menu button{
-	width: 24%;
-	height: 100%;
+.menu button {
+    width: 24%;
+    height: 100%;
+    background-color: #333333; /* Cinza mais escuro */
+    color: #ffffff; /* Branco */
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: #555555; /* Cinza escuro */
 }
 
 /* Telas Secundárias */
 
 .achievements, .options, .shop, .credits{
-	display: none;
+    display: none;
 }
 
 /* Controles do Menu */
 
 .controls{
-	width: 100%;
-	height: 5%;
+    width: 100%;
+    height: 5%;
 }
 
-.controls button{
-	position: fixed;
-	right: 20%;
-	width: 5%;
-	height: 5%;
+.controls button {
+    position: fixed;
+    right: 20%;
+    width: 5%;
+    height: 5%;
+    background-color: #333333; /* Cinza mais escuro */
+    color: #ffffff; /* Branco */
+    border: none;
+    cursor: pointer;
 }
 
 .close_btn{
-	text-align: center;
+    text-align: center;
+    border: solid;
 }
 
 #buyaut1{
-	background-image: url("content/upg1.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut2{
-	background-image: url("content/upg2.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut3{
-	background-image: url("content/upg3.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut4{
-	background-image: url("content/upg4.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut5{
-	background-image: url("content/upg5.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg5.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut6{
-	background-image: url("content/upg6.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg6.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut7{
-	background-image: url("content/upg7.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg7.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut8{
-	background-image: url("content/upg8.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg8.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut9{
-	background-image: url("content/upg9.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg9.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #buyaut10{
-	background-image: url("content/upg10.png");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-image: url("content/upg10.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #achievements_table{
-	border-style: solid;
-	position: fixed;
-	top: 15%;
-	left: 20%;
+    border-style: solid;
+    position: fixed;
+    top: 15%;
+    left: 20%;
 }
 
 #achievements_table td{
-	width: 72px;
-	height: 72px;
-	border-style: solid;
+    width: 72px;
+    height: 72px;
+    border-style: solid;
 }
