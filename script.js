@@ -525,7 +525,7 @@ function Save(){
 
 setInterval(function(){
 	clicks = clicks + cps;
-	document.title = clicks + " clicks - Clicker Adventure";
+	document.title = formatarNumero(clicks) + " clicks - Clicker Adventure";
 	Save()
 	update();
 }, 1000)
